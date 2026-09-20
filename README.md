@@ -12,3 +12,8 @@
 - Service Workerを即時更新する設定
 
 教材画像・MP3はGitHub Pagesへ置かず、iPhone側へ登録してください。
+
+
+## v6 iPhone media registration fix
+画像・音声はFile/Blob/ArrayBufferではなくData URLとしてIndexedDBへ保存します。
+新しいIndexedDB領域（eigomimi-v6）を使うため、旧版の保存不具合や古いService Workerの影響を受けにくくしています。
