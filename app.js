@@ -1,4 +1,4 @@
-const DB='eigomimi-v3',VER=1;let db;
+const DB='eigomimi-v7',VER=1;let db;
 const $=id=>document.getElementById(id);
 let state={lesson:1,book:false,current:null,queue:[],idx:-1,repeat:false,gap:0,A:null,B:null,ab:false,editing:null,recording:null};
 const audio=new Audio(); audio.preload='metadata';
@@ -92,7 +92,7 @@ async function addPages(files){
       await put('pages',{
         id:uid(),lesson:state.lesson,order:order++,
         pageNo:guessPageNo(f.name,order),
-        visible:(existing.length===0 && added===0),
+        visible:true,
         data:media.data,type:media.type,name:media.name
       });
       added++;
