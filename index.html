@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#e91e8c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="apple-touch-icon" href="icon.png">
+<title>英語耳</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="styles.css?v=5">
+</head>
+<body>
+<header><h1>英語耳</h1><button id="bookBtn">📖 本を読む</button></header>
+
+<main>
+<section id="editToolbar" class="toolbar">
+<label>📚 Lesson <select id="lessonSelect"><option value="1">Lesson 01</option><option value="2">Lesson 02</option><option value="3">Lesson 03</option><option value="4">Lesson 04</option><option value="5">Lesson 05</option><option value="6">Lesson 06</option><option value="7">Lesson 07</option><option value="8">Lesson 08</option><option value="9">Lesson 09</option><option value="10">Lesson 10</option><option value="11">Lesson 11</option><option value="12">Lesson 12</option><option value="13">Lesson 13</option><option value="14">Lesson 14</option><option value="15">Lesson 15</option><option value="16">Lesson 16</option><option value="17">Lesson 17</option><option value="18">Lesson 18</option><option value="19">Lesson 19</option><option value="20">Lesson 20</option><option value="21">Lesson 21</option><option value="22">Lesson 22</option><option value="23">Lesson 23</option><option value="24">Lesson 24</option><option value="25">Lesson 25</option><option value="26">Lesson 26</option></select></label>
+<button id="addPageBtn">＋ページ画像</button>
+<button id="addAudioBtn">＋音声</button>
+<input id="pageFiles" type="file" accept="image/*" multiple hidden>
+<input id="audioFiles" type="file" accept="audio/*,.mp3,.m4a,.wav,.ogg" multiple hidden>
+</section>
+
+<section id="lessonTitle"></section>
+<section id="pages"></section>
+<section id="hiddenPages"></section>
+<section id="audioManager"></section>
+<section id="bookView" hidden></section>
+</main>
+
+<aside id="player" class="player">
+<div class="now" id="now">音声を選択してください</div>
+<div class="seekrow"><span id="cur">0:00</span><input id="seek" type="range" min="0" max="1000" value="0"><span id="dur">0:00</span></div>
+<div class="controls">
+<button id="prev">⏮</button><button id="restart">↺</button><button id="play">▶️</button><button id="next">⏭</button><button id="repeat">🔁</button>
+</div>
+<div class="controls small"><button id="setA">A</button><button id="setB">B</button><button id="ab">A-B OFF</button><label>速度 <select id="speed"><option>0.5</option><option>0.75</option><option selected>1</option><option>1.25</option><option>1.5</option><option>1.75</option><option>2</option></select></label><label>間隔 <input id="gap" type="number" min="0" max="10" step=".5" value="0">秒</label></div>
+<div class="markers"><span id="markA">A:—</span><span id="markB">B:—</span></div>
+</aside>
+
+<dialog id="editDialog">
+<form method="dialog">
+<h3 id="editTitle">Practice編集</h3>
+<input id="practiceName" placeholder="Practice名">
+<select id="audioSelect"></select>
+<div class="dialogBtns"><button value="cancel">キャンセル</button><button id="savePractice" value="default">保存</button></div>
+</form>
+</dialog>
+
+<dialog id="recordDialog">
+<div class="recordBox">
+<h3>🎙️ シャドーイング</h3>
+<p id="recordTarget"></p>
+<div class="recordBtns"><button id="refOnly">お手本</button><button id="ownOnly">自分の声</button><button id="bothPlay">両方</button></div>
+<button id="recordStart">⏺ 録音開始</button><button id="recordStop" disabled>⏹ 停止</button>
+<p id="recordState">待機中</p>
+<audio id="ownAudio" controls hidden></audio>
+<button id="deleteRecording" hidden>録音を削除</button>
+<button id="closeRecord">閉じる</button>
+</div>
+</dialog>
+
+<script src="app.js?v=5"></script>
+</body>
+</html>

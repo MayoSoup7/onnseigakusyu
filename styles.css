@@ -1,0 +1,63 @@
+*{box-sizing:border-box}
+:root{color-scheme:dark}
+html,body{margin:0;background:#111216;color:#f3f3f5;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{padding-bottom:190px}
+header{position:sticky;top:0;z-index:20;background:#18191e;border-bottom:1px solid #30323a;padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+h1{font-size:21px;margin:0;color:#ff4ca7}
+h2{font-size:20px;margin:10px 4px}
+button,select,input{font:inherit}
+button{border:1px solid #343640;border-radius:12px;background:#22242b;color:#f4f4f6;padding:10px 12px;box-shadow:0 2px 8px #0005}
+button:active{transform:scale(.97)}
+button.danger{color:#ff7a9f;border-color:#633143}
+button.primary{background:#e91e8c;color:#fff;border-color:#e91e8c}
+main{padding:12px;max-width:900px;margin:auto}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.toolbar label{background:#1d1f25;border:1px solid #30323a;padding:8px 10px;border-radius:12px}
+.toolbar select{border:0;background:transparent;color:#fff}
+.page{background:#1a1b20;border:1px solid #2c2e35;border-radius:18px;margin:12px 0;padding:10px;box-shadow:0 4px 18px #0005}
+.page.hiddenPage{opacity:.5}
+.page img{display:block;width:100%;height:auto;border-radius:12px;max-height:70vh;object-fit:contain;background:#0c0d10}
+.pageHead{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
+.pageNum{font-weight:800}
+.practice{border-top:1px solid #30323a;padding:10px 2px}
+.practiceTop{display:flex;justify-content:space-between;gap:6px;align-items:center}
+.practiceName{font-weight:700}
+.practiceBtns{display:flex;gap:6px;flex-wrap:wrap}
+.practiceBtns button{padding:8px}
+.audioChip{font-size:12px;color:#a9acb7;margin-top:4px}
+.hiddenBox,.audioBox{background:#18191e;border:1px solid #30323a;border-radius:16px;padding:10px;margin:12px 0}
+.hiddenRow,.audioRow{display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid #30323a;padding:9px 0}
+.hiddenRow:first-child,.audioRow:first-child{border-top:0}
+.hiddenHint,.muted{color:#a9acb7;font-size:13px}
+.player{position:fixed;z-index:30;left:0;right:0;bottom:0;background:#18191e;border-top:1px solid #343640;padding:8px 10px calc(8px + env(safe-area-inset-bottom));box-shadow:0 -4px 18px #0008}
+.now{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.seekrow{display:grid;grid-template-columns:42px 1fr 42px;gap:6px;align-items:center;font-size:12px}
+.seekrow input{width:100%}
+.controls{display:flex;justify-content:center;gap:7px}
+.controls button{min-width:44px}
+.controls.small{font-size:13px;margin-top:5px;align-items:center}
+.controls.small label{background:#22242b;border:1px solid #343640;border-radius:10px;padding:6px}
+.controls.small input{width:48px}
+.markers{display:flex;justify-content:center;gap:20px;font-size:12px;color:#a9acb7}
+.dialogBtns{display:flex;justify-content:flex-end;gap:8px;margin-top:15px}
+.recordBox{min-width:min(90vw,420px)}
+.recordBtns{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}
+.recordBox audio{width:100%;margin:10px 0}
+dialog{border:1px solid #383a44;border-radius:18px;background:#1b1c21;color:#f4f4f6;box-shadow:0 10px 40px #0009;max-width:94vw}
+dialog::backdrop{background:#000b}
+dialog input,dialog select{width:100%;padding:11px;border-radius:10px;border:1px solid #3a3c46;background:#111216;color:#fff}
+.dialogBtns button:last-child{background:#e91e8c;color:white}
+.bookMode .bookHeader{display:flex;justify-content:space-between;align-items:center}
+.bookMode .page{margin-bottom:18px}
+.bookMode .pageHead button{display:none}
+.bookMode .pageHead{margin-bottom:8px}
+@media(max-width:600px){
+ .toolbar button{flex:1}
+ .toolbar label{width:100%}
+ .toolbar label select{width:100%}
+ body{padding-bottom:205px}
+ .practiceTop{align-items:flex-start}
+ .practiceBtns button{padding:7px 9px}
+}
+[hidden]{display:none!important}
+#lessonTitle .currentLesson{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#241b22;border:1px solid #553046;border-radius:16px;padding:12px 14px;margin:8px 0 12px;color:#fff}#lessonTitle .currentLesson strong{color:#ff62b3;font-size:20px}#editToolbar{margin-bottom:8px}
